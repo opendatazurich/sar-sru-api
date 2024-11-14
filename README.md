@@ -218,7 +218,7 @@ Sruthi bietet noch eine Vielzahl weiterer Funktionalität. Weitere Beispiele fin
 
 ### Interaktives Jupyter Notebook
 
-Nun, da Sie einige Beispiel von Abfragen mit Python gesehen haben, ist es an der Zeit selbst eigene Abfragen zu machen. Wir haben für Sie ein Jupyter Notebook vorbereitet, mit dem Sie selbst Abfragen ausprobieren können. Wenn Sie keine Python-Installation auf Ihrem Computer haben, können Sie das Notebook im Browser öffnen (z.B. über Google Colab indem Sie hier klicken [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/opendatazurich/opendatazurich.github.io/blob/master/rpk-api/RPK-API-Beispiele.ipynb)). Führen Sie dort die Codezellen von oben nach unten aus mit `CTRL + Enter`. Trauen Sie sich, sie können nichts kaputt machen!
+Nun, da Sie einige Beispiel von Abfragen mit Python gesehen haben, ist es an der Zeit selbst eigene Abfragen zu machen. Wir haben für Sie ein Jupyter Notebook vorbereitet, mit dem Sie selbst Abfragen ausprobieren können. Wenn Sie keine Python-Installation auf Ihrem Computer haben, können Sie das Notebook im Browser öffnen (z.B. über Google Colab indem Sie hier klicken [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/opendatazurich/sar-sru-api/blob/main/files/SRU_Beispiele.ipynb)). Führen Sie dort die Codezellen von oben nach unten aus mit `CTRL + Enter`. Trauen Sie sich, sie können nichts kaputt machen!
 
 # 6. Fehlerbehebung
 
@@ -319,7 +319,7 @@ https://amsquery.stadt-zuerich.ch/SRU/?operation=searchretrieve&version=1.2&quer
 - [Online Archivkatalog des Stadtarchivs Zürich](https://amsquery.stadt-zuerich.ch/suchinfo.aspx)
 - [Wikipediaseite zu SRU](https://de.wikipedia.org/wiki/Search/Retrieve_via_URL)
 - [SRU Dokumentation](https://www.loc.gov/standards/sru/sru-2-0.html)
-- [Jupyter Notebook](files/SRU_Beispiele.ipynb) zur interaktiven Erkundung des Schnittstelle
+- [Jupyter Notebook](files/SRU_Beispiele.ipynb) zur interaktiven Erkundung des Schnittstelle ([![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/opendatazurich/sar-sru-api/blob/main/files/SRU_Beispiele.ipynb))
 
 # 9. Schlusswort
 
