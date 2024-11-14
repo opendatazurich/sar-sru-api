@@ -246,13 +246,13 @@ Nun, da Sie einige Beispiel von Abfragen mit Python gesehen haben, ist es an der
 
 Um die SRU-Schnittstelle des Online Archivkatalogs des Stadtarchivs Zürich optimal zu nutzen, beachten Sie die folgenden Tipps:
 
-1. **Verwenden Sie spezifische Suchbegriffe** : Je genauer Ihre Suchbegriffe sind, desto relevanter werden die Ergebnisse sein. Vermeiden Sie allgemeine Begriffe und nutzen Sie spezifische Namen, Daten oder Schlagwörter.
-2. **Kombinieren Sie Parameter** : Nutzen Sie die Möglichkeit, mehrere Parameter zu kombinieren, um präzisere Ergebnisse zu erhalten. Zum Beispiel können Sie nach einem bestimmten Autor und einem bestimmten Zeitraum gleichzeitig suchen.
-3. **Überprüfen Sie regelmäßig die Dokumentation** : Die SRU-Schnittstelle kann aktualisiert werden. Stellen Sie sicher, dass Sie immer die aktuelle [Dokumentation](https://www.loc.gov/standards/sru/sru-2-0.html) zur Hand haben, um neue Funktionen und Änderungen zu nutzen.
+1. **Verwenden Sie spezifische Suchbegriffe**: Je genauer Ihre Suchbegriffe sind, desto relevanter werden die Ergebnisse sein. Vermeiden Sie allgemeine Begriffe und nutzen Sie spezifische Namen, Daten oder Schlagwörter.
+2. **Kombinieren Sie Parameter**: Nutzen Sie die Möglichkeit, mehrere Parameter zu kombinieren, um präzisere Ergebnisse zu erhalten. Zum Beispiel können Sie nach einem bestimmten Autor und einem bestimmten Zeitraum gleichzeitig suchen.
+3. **Überprüfen Sie regelmäßig die Dokumentation**: Die SRU-Schnittstelle kann aktualisiert werden. Stellen Sie sicher, dass Sie immer die aktuelle [Dokumentation](https://www.loc.gov/standards/sru/sru-2-0.html) zur Hand haben, um neue Funktionen und Änderungen zu nutzen.
 
 # 8. Anhang
 
-## Beispielabfragen:
+## Beispielabfragen
 
 Basisabfrage
 
@@ -314,7 +314,7 @@ Alle records welche mit der Signatur "VII." beginnen, Stufe "Dossier" sind und d
 https://amsquery.stadt-zuerich.ch/SRU/?operation=searchretrieve&version=1.2&query=isad.reference%20==%20%22VII.%22%20and%20isad.descriptionlevel%20=%20%22dossier%22%20and%20isad.date%20within%20%221950-01-01%201950-12-31%22
 ```
 
-## Ressourcen:
+## Ressourcen
 
 - [Online Archivkatalog des Stadtarchivs Zürich](https://amsquery.stadt-zuerich.ch/suchinfo.aspx)
 - [Wikipediaseite zu SRU](https://de.wikipedia.org/wiki/Search/Retrieve_via_URL)
