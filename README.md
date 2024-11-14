@@ -5,7 +5,7 @@ SRU Schnittstelle zum Online Archivkatalog des Stadtarchivs Zürich
 
 Willkommen zur Anleitung für die Benutzung der SRU-Schnittstelle des Online Archivkatalogs des Stadtarchivs Zürich. Diese Anleitung soll Ihnen helfen, die vielfältigen Möglichkeiten der SRU-Schnittstelle zu verstehen und effektiv zu nutzen.
 
-Der Online Archivkatalog des Stadtarchivs Zürich, erreichbar unter [https://amsquery.stadt-zuerich.ch/](https://amsquery.stadt-zuerich.ch/), bietet eine umfangreiche Sammlung historischer Dokumente und Daten. Mit der SRU-Schnittstelle können Sie gezielt nach Informationen suchen und diese effizient abrufen.
+Der Online Archivkatalog des Stadtarchivs Zürich ist erreichbar unter [https://amsquery.stadt-zuerich.ch/](https://amsquery.stadt-zuerich.ch/) und bietet eine umfangreiche Sammlung historischer Dokumente und Daten. Mit der SRU-Schnittstelle können Sie gezielt nach Informationen suchen und diese effizient abrufen.
 
 Diese Anleitung richtet sich an Archivarinnen und Archivare, Forschende und alle, die mit dem Archivkatalog arbeiten möchten. Sie bietet sowohl eine Einführung in die grundlegenden Funktionen als auch detaillierte Anleitungen für fortgeschrittene Abfragen und die Fehlerbehebung.
 
@@ -19,7 +19,7 @@ SRU (Search/Retrieve via URL) ist ein standardisiertes Protokoll, das es ermögl
 
 ## Anwendungsbeispiele
 
-Die SRU-Schnittstelle wird in vielen Bereichen eingesetzt, um den Zugriff auf umfangreiche Datenbestände zu erleichtern. Im Kontext des Stadtarchivs Zürich ermöglicht SRU den Nutzern, spezifische historische Dokumente und Datensätze schnell und präzise zu finden. Forscher können beispielsweise gezielte Abfragen durchführen, um relevante Archivmaterialien für ihre Studien zu identifizieren, während Archivare die Schnittstelle nutzen können, um den Katalog effizient zu durchsuchen und zu verwalten.
+Die SRU-Schnittstelle wird in vielen Bereichen eingesetzt, um den Zugriff auf umfangreiche Datenbestände zu erleichtern. Im Kontext des Stadtarchivs Zürich ermöglicht SRU den Nutzern, spezifische historische Dokumente und Datensätze schnell und präzise zu finden. Forschende können beispielsweise gezielte Abfragen durchführen, um relevante Archivmaterialien für ihre Studien zu identifizieren, während Archivarinnen und Archivare die Schnittstelle nutzen können, um den Katalog effizient zu durchsuchen und zu verwalten.
 
 # 3. Voraussetzungen
 
@@ -30,7 +30,7 @@ Die SRU-Schnittstelle wird in vielen Bereichen eingesetzt, um den Zugriff auf um
 
 ## Grundlegende Abfragen
 
-Über die Webseite [https://amsquery.stadt-zuerich.ch/](https://amsquery.stadt-zuerich.ch/) können Sie verschiedene Suchanfragen direkt im Browser erledigen. Über die [Arichivplansuche](https://amsquery.stadt-zuerich.ch/archivplansuche.aspx) können Sie in einer Baumdarstellung durch die Hierarchie der Ablage klicken. Mit der Volltext, Feld- und Deskriptorensuche können auch komplexere Suchen, die bestimmte Parameter und Filter kombinieren, realisiert werden. [Hier ](https://amsquery.stadt-zuerich.ch/Help_de/Query.htm#&t=htm%2FSuche_nach_Verzeichnungseinheiten.htm)gibt es eine Anleitung zur Benutzung der Suche auf der Webseite. Alle diese Suchfunktionalitäten können auch direkt über die SRU Schnittstelle angesteuert werden.
+Über die Webseite [https://amsquery.stadt-zuerich.ch/](https://amsquery.stadt-zuerich.ch/) können Sie verschiedene Suchanfragen direkt im Browser erledigen. Über die [Archivplansuche](https://amsquery.stadt-zuerich.ch/archivplansuche.aspx) können Sie in einer Baumdarstellung durch die Hierarchie der Ablage klicken. Mit der Volltext, Feld- und Deskriptorensuche können auch komplexere Suchen, die bestimmte Parameter und Filter kombinieren, realisiert werden. [Hier ](https://amsquery.stadt-zuerich.ch/Help_de/Query.htm#&t=htm%2FSuche_nach_Verzeichnungseinheiten.htm)gibt es eine Anleitung zur Benutzung der Suche auf der Webseite. Alle diese Suchfunktionalitäten können auch direkt über die SRU Schnittstelle angesteuert werden.
 
 Um die SRU-Schnittstelle des Online Archivkatalogs des Stadtarchivs Zürich zu nutzen, müssen Sie zunächst eine Verbindung herstellen. Folgen Sie diesen Schritten:
 
@@ -121,34 +121,34 @@ Mit der SRU-Schnittstelle können Sie auch komplexere Abfragen durchführen, um 
 **Suche nach mehreren Kriterien**:
 
 ```plaintext
-   https://amsquery.stadt-zuerich.ch/sru?version=1.2&operation=searchRetrieve&query=isad.title=Zürich AND isad.date==1900-01-01
+https://amsquery.stadt-zuerich.ch/sru?version=1.2&operation=searchRetrieve&query=isad.title=Zürich AND isad.date==1900-01-01
 ```
 
-   Diese Abfrage sucht nach Einträgen, die den Titel “Zürich” enthalten und am 1. Januar 1900 erstellt wurden.
+Diese Abfrage sucht nach Einträgen, die den Titel "Zürich" enthalten und am 1. Januar 1900 erstellt wurden.
 
 **Suche nach einer bestimmten Signatur**:
 
 ```plaintext
-   https://amsquery.stadt-zuerich.ch/SRU/?operation=searchretrieve&version=1.2&query=isad.reference=="V.F.a.38."
+https://amsquery.stadt-zuerich.ch/SRU/?operation=searchretrieve&version=1.2&query=isad.reference=="V.F.a.38."
 ```
 
-   Diese Abfrage sucht nach Einträgen, deren Signatur mit "V.F.a.38." beginnt.
+Diese Abfrage sucht nach Einträgen, deren Signatur mit "V.F.a.38." beginnt.
 
 **Suche nach Dokumenten einer bestimmten Stufe**:
 
 ```plaintext
-   https://amsquery.stadt-zuerich.ch/SRU/?operation=searchretrieve&version=1.2&query=isad.descriptionlevel="dossier" and isad.title="Feuerpolizei"
+https://amsquery.stadt-zuerich.ch/SRU/?operation=searchretrieve&version=1.2&query=isad.descriptionlevel="dossier" and isad.title="Feuerpolizei"
 ```
 
-   Diese Abfrage sucht nach Einträgen von der Stufe "Dossier", die "Feuerpolizei" im Titel haben.
+Diese Abfrage sucht nach Einträgen von der Stufe "Dossier", die "Feuerpolizei" im Titel haben.
 
 **Suche mit Bereichsangaben**:
 
 ```plaintext
-   https://amsquery.stadt-zuerich.ch/SRU/?operation=searchretrieve&version=1.2&query=ISAD.Date within "1920 1925"
+https://amsquery.stadt-zuerich.ch/SRU/?operation=searchretrieve&version=1.2&query=ISAD.Date within "1920 1925"
 ```
 
-   Diese Abfrage sucht nach Einträgen, die zwischen dem 1. Januar 1920 und dem 31. Dezember 1925 erstellt wurden.
+Diese Abfrage sucht nach Einträgen, die zwischen dem 1. Januar 1920 und dem 31. Dezember 1925 erstellt wurden.
 
 Weitere Beispiele mit komplexen Abfragen finden Sie auch im Anhang weiter unten.
 
@@ -158,7 +158,7 @@ Möchten Sie viele verschiedene Abfragen machen oder Abfragen zu bestimmten Zeit
 
 ### sruthi
 
-Da es sich bei SRU um ein XML-basiertes Protokoll handelt, gibt es dazu die Hilfsbiliothek [sruthi](https://github.com/metaodi/sruthi), die dabei hilft die Anfragen zu formulieren und die Antworten für Python nutzbar zu machen. Sruthi lässt sich einfach über die Kommandozeile installieren:
+Da es sich bei SRU um ein XML-basiertes Protokoll handelt, gibt es dazu die Hilfsbilbiothek [sruthi](https://github.com/metaodi/sruthi), die dabei hilft die Anfragen zu formulieren und die Antworten für Python nutzbar zu machen. Sruthi lässt sich einfach über die Kommandozeile installieren:
 
 ```shell
 pip install sruthi
