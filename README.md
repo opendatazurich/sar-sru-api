@@ -39,7 +39,7 @@ Um die SRU-Schnittstelle des Online Archivkatalogs des Stadtarchivs Zürich zu n
 **Parameter festlegen**: Definieren Sie die notwendigen Parameter für Ihre Abfrage. Ein einfaches Beispiel könnte wie folgt aussehen:
 
 ```plaintext
-   https://amsquery.stadt-zuerich.ch/sru?version=1.2&operation=searchRetrieve&query=schulpflege
+https://amsquery.stadt-zuerich.ch/sru?version=1.2&operation=searchRetrieve&query=schulpflege
 ```
 
 **Abfrage senden**: Drücken Sie die Eingabetaste, um die Abfrage zu senden. Sie erhalten eine XML-Antwort mit den Suchergebnissen:
@@ -51,26 +51,36 @@ Hier sind einige einfache Beispielabfragen, um Ihnen den Einstieg zu erleichtern
 **Suche nach einem bestimmten Begriff**:
 
 ```plaintext
-   https://amsquery.stadt-zuerich.ch/sru?version=1.2&operation=searchRetrieve&query=Zürich
+https://amsquery.stadt-zuerich.ch/sru?version=1.2&operation=searchRetrieve&query=Zürich
 ```
 
-   Diese Abfrage sucht nach allen Einträgen, die den Begriff "Zürich" enthalten.
+Diese Abfrage sucht nach allen Einträgen, die den Begriff "Zürich" enthalten.
 
 **Suche nach einem bestimmten Titel**:
 
 ```plaintext
-   https://amsquery.stadt-zuerich.ch/sru/?version=1.2&operation=searchRetrieve&query=isad.title=Kindergarten
+https://amsquery.stadt-zuerich.ch/sru/?version=1.2&operation=searchRetrieve&query=isad.title=Kindergarten
 ```
 
-   Diese Abfrage sucht nach Einträgen, die den Begriff "Kindergarten" im Titel enthalten.
+Diese Abfrage sucht nach Einträgen, die den Begriff "Kindergarten" im Titel enthalten.
 
 **Suche nach einem bestimmten Zeitpunkt**:
 
 ```plaintext
-   https://amsquery.stadt-zuerich.ch/sru?version=1.2&operation=searchRetrieve&query=isad.date==1900-01-01
+https://amsquery.stadt-zuerich.ch/sru?version=1.2&operation=searchRetrieve&query=isad.date==1900-01-01
 ```
 
-   Diese Abfrage sucht nach Einträgen, die am 1. Januar 1900 beginnen.
+Diese Abfrage sucht nach Einträgen, die am 1. Januar 1900 beginnen.
+
+**Volltextsuche:**
+
+Wenn bei der Abfrage SERVERCHOICE angegeben wird, wird die Volltextsuche verwendet. Das heisst, es werden alle Bestände und auch Anhänge durchsucht. Diese Abfrage sucht zum Beispiel nach Einträgen, in welchen im Vollindex sowohl der Begriff Geschäftsbericht wie auch Pandemie vorkommt.
+```plaintext
+https://amsquery.stadt-zuerich.ch/SRU/?operation=searchRetrieve&version=1.2&query=SERVERCHOICE all "Geschäftsbericht Pandemie"
+```
+
+
+
 
 Diese grundlegenden Abfragen sollten Ihnen helfen, sich mit der Funktionsweise der SRU-Schnittstelle vertraut zu machen. Details zu Filtern und Parameteroptionen finden Sie im nächsten Kapitel.
 
