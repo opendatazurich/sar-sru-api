@@ -34,13 +34,11 @@ Die SRU-Schnittstelle wird in vielen Bereichen eingesetzt, um den Zugriff auf um
 
 Um die SRU-Schnittstelle des Online Archivkatalogs des Stadtarchivs Zürich zu nutzen, müssen Sie zunächst eine Verbindung herstellen. Folgen Sie diesen Schritten:
 
-**URL aufrufen**: Öffnen Sie Ihren Webbrowser und geben Sie die URL der SRU-Schnittstelle ein: `https://amsquery.stadt-zuerich.ch/sru`.
+**URL aufrufen**: Öffnen Sie Ihren Webbrowser und geben Sie die URL der SRU-Schnittstelle ein: [https://amsquery.stadt-zuerich.ch/sru](https://amsquery.stadt-zuerich.ch/sru).
 
 **Parameter festlegen**: Definieren Sie die notwendigen Parameter für Ihre Abfrage. Ein einfaches Beispiel könnte wie folgt aussehen:
 
-```plaintext
-https://amsquery.stadt-zuerich.ch/sru?version=1.2&operation=searchRetrieve&query=schulpflege
-```
+[https://amsquery.stadt-zuerich.ch/sru?version=1.2&operation=searchRetrieve&query=schulpflege](https://amsquery.stadt-zuerich.ch/sru?version=1.2&operation=searchRetrieve&query=schulpflege)
 
 **Abfrage senden**: Drücken Sie die Eingabetaste, um die Abfrage zu senden. Sie erhalten eine XML-Antwort mit den Suchergebnissen:
 
@@ -50,35 +48,27 @@ Hier sind einige einfache Beispielabfragen, um Ihnen den Einstieg zu erleichtern
 
 **Suche nach einem bestimmten Begriff**:
 
-```plaintext
-https://amsquery.stadt-zuerich.ch/sru?version=1.2&operation=searchRetrieve&query=Frauenstimmrecht
-```
+[https://amsquery.stadt-zuerich.ch/sru?version=1.2&operation=searchRetrieve&query=Frauenstimmrecht](https://amsquery.stadt-zuerich.ch/sru?version=1.2&operation=searchRetrieve&query=Frauenstimmrecht)
 
 Diese Abfrage sucht nach allen Einträgen (Volltext), die den Begriff "Frauenstimmrecht" enthalten.
 
 **Suche nach einem bestimmten Begriff im Titel**:
 
-```plaintext
-https://amsquery.stadt-zuerich.ch/sru/?version=1.2&operation=searchRetrieve&query=isad.title=Abstimmungszeitung
-```
+[https://amsquery.stadt-zuerich.ch/sru/?version=1.2&operation=searchRetrieve&query=isad.title=Abstimmungszeitung](https://amsquery.stadt-zuerich.ch/sru/?version=1.2&operation=searchRetrieve&query=isad.title=Abstimmungszeitung)
 
 Diese Abfrage sucht nach Einträgen, die den Begriff "Abstimmungszeitung" im Titel enthalten.
 
 **Suche nach einem bestimmten Zeitpunkt**:
 
-```plaintext
-https://amsquery.stadt-zuerich.ch/sru?version=1.2&operation=searchRetrieve&query=isad.date==1900-01-01
-```
+[https://amsquery.stadt-zuerich.ch/sru?version=1.2&operation=searchRetrieve&query=isad.date==1900-01-01](https://amsquery.stadt-zuerich.ch/sru?version=1.2&operation=searchRetrieve&query=isad.date==1900-01-01)
 
 Diese Abfrage sucht nach Einträgen, die am 1. Januar 1900 beginnen.
 
 **Volltextsuche:**
 
 Wenn bei der Abfrage SERVERCHOICE angegeben wird, wird die Volltextsuche verwendet. Das heisst, es werden alle Bestände und auch Anhänge (Findmittel und/oder Digitalisate) durchsucht. Diese Abfrage sucht zum Beispiel nach Einträgen, in welchen im Vollindex sowohl der Begriff Geschäftsbericht wie auch Pandemie vorkommt.
-```plaintext
-https://amsquery.stadt-zuerich.ch/SRU/?operation=searchRetrieve&version=1.2&query=SERVERCHOICE all "Geschäftsbericht Pandemie"
-```
 
+[https://amsquery.stadt-zuerich.ch/SRU/?operation=searchRetrieve&version=1.2&query=SERVERCHOICE all "Geschäftsbericht Pandemie"](<https://amsquery.stadt-zuerich.ch/SRU/?operation=searchRetrieve&version=1.2&query=SERVERCHOICE all "Geschäftsbericht Pandemie">)
 
 
 
@@ -130,33 +120,27 @@ Mit der SRU-Schnittstelle können Sie auch komplexere Abfragen durchführen, um 
 
 **Suche nach mehreren Kriterien**:
 
-```plaintext
-https://amsquery.stadt-zuerich.ch/SRU/?operation=searchRetrieve&version=1.2&query=ISAD.TITLE=Abstimmungszeitung AND ISAD.Date within "1960 1962" 
-```
+[https://amsquery.stadt-zuerich.ch/SRU/?operation=searchRetrieve&version=1.2&query=ISAD.TITLE=Abstimmungszeitung AND ISAD.Date within "1960 1962" ](<https://amsquery.stadt-zuerich.ch/SRU/?operation=searchRetrieve&version=1.2&query=ISAD.TITLE=Abstimmungszeitung AND ISAD.Date within "1960 1962">)
+
 
 Diese Abfrage sucht nach Einträgen, die im Titel "Abstimmungszeitung" enthalten und das Datum zwischen 1960 und 1962 ist.
 
 **Suche nach einer bestimmten Signatur**:
 
-```plaintext
-https://amsquery.stadt-zuerich.ch/SRU/?operation=searchretrieve&version=1.2&query=isad.reference=="V.A.a."
-```
+[https://amsquery.stadt-zuerich.ch/SRU/?operation=searchretrieve&version=1.2&query=isad.reference=="V.A.a."](<https://amsquery.stadt-zuerich.ch/SRU/?operation=searchretrieve&version=1.2&query=isad.reference=="V.A.a.">)
+
 
 Diese Abfrage sucht nach Einträgen, deren Signatur mit "V.A.a." beginnt.
 
 **Suche nach Dokumenten einer bestimmten Stufe**:
 
-```plaintext
-https://amsquery.stadt-zuerich.ch/SRU/?operation=searchretrieve&version=1.2&query=isad.descriptionlevel="dossier" and isad.title="Feuerpolizei"
-```
+[https://amsquery.stadt-zuerich.ch/SRU/?operation=searchretrieve&version=1.2&query=isad.descriptionlevel="dossier" and isad.title="Feuerpolizei"](<https://amsquery.stadt-zuerich.ch/SRU/?operation=searchretrieve&version=1.2&query=isad.descriptionlevel="dossier" and isad.title="Feuerpolizei">)
 
 Diese Abfrage sucht nach Einträgen der Stufe "Dossier", die "Feuerpolizei" im Titel haben.
 
 **Suche mit Bereichsangaben**:
 
-```plaintext
-https://amsquery.stadt-zuerich.ch/SRU/?operation=searchretrieve&version=1.2&query=ISAD.Date within "1920 1925"
-```
+[https://amsquery.stadt-zuerich.ch/SRU/?operation=searchretrieve&version=1.2&query=ISAD.Date within "1920 1925"](<https://amsquery.stadt-zuerich.ch/SRU/?operation=searchretrieve&version=1.2&query=ISAD.Date within "1920 1925">)
 
 Diese Abfrage sucht nach Einträgen, deren Enstehungszeitraum zwischen dem 1. Januar 1920 und dem 31. Dezember 1925 sich erstreckt.
 
@@ -228,7 +212,7 @@ Sruthi bietet noch eine Vielzahl weiterer Funktionalität. Weitere Beispiele fin
 
 ### Interaktives Jupyter Notebook
 
-Nun, da Sie einige Beispiel von Abfragen mit Python gesehen haben, ist es an der Zeit selbst eigene Abfragen zu machen. Wir haben für Sie ein Jupyter Notebook vorbereitet, mit dem Sie selbst Abfragen ausprobieren können. Wenn Sie keine Python-Installation auf Ihrem Computer haben, können Sie das Notebook im Browser öffnen (z.B. über Google Colab indem Sie hier klicken [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/opendatazurich/sar-sru-api/blob/main/files/SRU_Beispiele.ipynb)). Führen Sie dort die Codezellen von oben nach unten aus mit `CTRL + Enter`. Trauen Sie sich, sie können nichts kaputt machen!
+Nun, da Sie einige Beispiel von Abfragen mit Python gesehen haben, ist es an der Zeit selbst eigene Abfragen zu machen. Wir haben für Sie ein [Jupyter Notebook](files/SRU_Beispiele.ipynb) vorbereitet, mit dem Sie selbst Abfragen ausprobieren können. Wenn Sie keine Python-Installation auf Ihrem Computer haben, können Sie das Notebook im Browser öffnen (z.B. über Google Colab indem Sie hier klicken [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/opendatazurich/sar-sru-api/blob/main/files/SRU_Beispiele.ipynb)). Führen Sie dort die Codezellen von oben nach unten aus mit `CTRL + Enter`. Trauen Sie sich, sie können nichts kaputt machen!
 
 # 6. Fehlerbehebung
 
@@ -266,63 +250,53 @@ Um die SRU-Schnittstelle des Online Archivkatalogs des Stadtarchivs Zürich opti
 
 Basisabfrage
 
-```
-https://amsquery.stadt-zuerich.ch/SRU/?operation=searchretrieve&version=1.2&query=
-```
+[https://amsquery.stadt-zuerich.ch/SRU/?operation=searchretrieve&version=1.2&query=](https://amsquery.stadt-zuerich.ch/SRU/?operation=searchretrieve&version=1.2&query=)
+
 
 Alle records (Verzeichnungseinheiten) deren Signatur (isad.reference) beginnt mit: "V.E.c.72.:1.2.1."
 
-```
-https://amsquery.stadt-zuerich.ch/SRU/?operation=searchretrieve&version=1.2&query=isad.reference=="V.E.c.72.:1.2.1."
-```
+[https://amsquery.stadt-zuerich.ch/SRU/?operation=searchretrieve&version=1.2&query=isad.reference=="V.E.c.72.:1.2.1."](https://amsquery.stadt-zuerich.ch/SRU/?operation=searchretrieve&version=1.2&query=isad.reference=="V.E.c.72.:1.2.1.")
+
 
 Alle records (Verzeichnungseinheiten) deren Signatur beginnt mit: "V.E.c.72.:1.2.1." und Titel ist "Tram"
 
-```
-https://amsquery.stadt-zuerich.ch/SRU/?operation=searchretrieve&version=1.2&query=isad.reference%20==%22V.E.c.72.:1.2.1.%22%20AND%20ISAD.TITLE==%22Tram%22
-```
+[https://amsquery.stadt-zuerich.ch/SRU/?operation=searchretrieve&version=1.2&query=isad.reference%20==%22V.E.c.72.:1.2.1.%22%20AND%20ISAD.TITLE==%22Tram%22](https://amsquery.stadt-zuerich.ch/SRU/?operation=searchretrieve&version=1.2&query=isad.reference%20==%22V.E.c.72.:1.2.1.%22%20AND%20ISAD.TITLE==%22Tram%22)
+
 
 Alle records (Verzeichnungseinheiten) deren Signatur beginnt mit: "V.E.c.72.:1.2.1." und Titel ist "Tram" und Datum ist 1920
 
-```
-https://amsquery.stadt-zuerich.ch/SRU/?operation=searchretrieve&version=1.2&query=isad.reference%20==%22V.E.c.72.:1.2.1.%22%20AND%20ISAD.TITLE==%22Tram%22%20AND%20ISAD.Date==%221920%22
-```
+[https://amsquery.stadt-zuerich.ch/SRU/?operation=searchretrieve&version=1.2&query=isad.reference%20==%22V.E.c.72.:1.2.1.%22%20AND%20ISAD.TITLE==%22Tram%22%20AND%20ISAD.Date==%221920%22](https://amsquery.stadt-zuerich.ch/SRU/?operation=searchretrieve&version=1.2&query=isad.reference%20==%22V.E.c.72.:1.2.1.%22%20AND%20ISAD.TITLE==%22Tram%22%20AND%20ISAD.Date==%221920%22)
+
 
 Alle records (Verzeichnungseinheiten) deren Signatur beginnt mit: "V.E.c.72.:1.2.1." und Titel ist "Tram" und Datum ist zwischen 1920 und 1925
 
-```
-https://amsquery.stadt-zuerich.ch/SRU/?operation=searchretrieve&version=1.2&query=isad.reference%20=="V.E.c.72.:1.2.1."%20AND%20ISAD.TITLE=="Tram"%20AND%20ISAD.Date within "1920 1925"
-```
+[https://amsquery.stadt-zuerich.ch/SRU/?operation=searchretrieve&version=1.2&query=isad.reference%20=="V.E.c.72.:1.2.1."%20AND%20ISAD.TITLE=="Tram"%20AND%20ISAD.Date within "1920 1925"](<https://amsquery.stadt-zuerich.ch/SRU/?operation=searchretrieve&version=1.2&query=isad.reference%20=="V.E.c.72.:1.2.1."%20AND%20ISAD.TITLE=="Tram"%20AND%20ISAD.Date within "1920 1925">)
+
 
 Volltextsuche auf der Detailseite:
 
-```
-https://amsquery.stadt-zuerich.ch/SRU/?operation=searchretrieve&version=1.2&query=Serverchoice%20all%20%22tram%22%20AND%20ISAD.REFERENCE==%22V.E.c.72.:1.2.1%22%20AND%20isad.date%20WITHIN%20%221920%201932%22%20and%20serverchoice%20all%20%22schwarz-weiss%20Karton%22
-```
+[https://amsquery.stadt-zuerich.ch/SRU/?operation=searchretrieve&version=1.2&query=Serverchoice%20all%20%22tram%22%20AND%20ISAD.REFERENCE==%22V.E.c.72.:1.2.1%22%20AND%20isad.date%20WITHIN%20%221920%201932%22%20and%20serverchoice%20all%20%22schwarz-weiss%20Karton%22](https://amsquery.stadt-zuerich.ch/SRU/?operation=searchretrieve&version=1.2&query=Serverchoice%20all%20%22tram%22%20AND%20ISAD.REFERENCE==%22V.E.c.72.:1.2.1%22%20AND%20isad.date%20WITHIN%20%221920%201932%22%20and%20serverchoice%20all%20%22schwarz-weiss%20Karton%22)
+
 
 Alle records (Verzeichnungseinheiten) deren Signatur beginnt mit: "VII.6.":
 
-```
-https://amsquery.stadt-zuerich.ch/SRU/?operation=searchretrieve&version=1.2&query=isad.reference%20==%20%22VII.6.%22
-```
+[https://amsquery.stadt-zuerich.ch/SRU/?operation=searchretrieve&version=1.2&query=isad.reference%20==%20%22VII.6.%22](https://amsquery.stadt-zuerich.ch/SRU/?operation=searchretrieve&version=1.2&query=isad.reference%20==%20%22VII.6.%22)
+
 
 Alle records (Verzeichnungseinheiten) welche mit der Signatur "VII.6." beginnen und Stufe "Dossier" sind:
 
-```
-https://amsquery.stadt-zuerich.ch/SRU/?operation=searchretrieve&version=1.2&query=isad.reference%20==%20%22VII.6.%22%20and%20isad.descriptionlevel%20=%20%22dossier%22
-```
+[https://amsquery.stadt-zuerich.ch/SRU/?operation=searchretrieve&version=1.2&query=isad.reference%20==%20%22VII.6.%22%20and%20isad.descriptionlevel%20=%20%22dossier%22](https://amsquery.stadt-zuerich.ch/SRU/?operation=searchretrieve&version=1.2&query=isad.reference%20==%20%22VII.6.%22%20and%20isad.descriptionlevel%20=%20%22dossier%22)
+
 
 Alle records (Verzeichnungseinheiten) welche mit der Signatur "VII." beginnen und im Volltext "theater" oder "griechen" vorkommt:
 
-```
-https://amsquery.stadt-zuerich.ch/SRU/?operation=searchretrieve&version=1.2&query=SERVERCHOICE%20any%20%22theater%20griechen%22%20and%20isad.reference%20==%20%22VII.%22
-```
+[https://amsquery.stadt-zuerich.ch/SRU/?operation=searchretrieve&version=1.2&query=SERVERCHOICE%20any%20%22theater%20griechen%22%20and%20isad.reference%20==%20%22VII.%22](https://amsquery.stadt-zuerich.ch/SRU/?operation=searchretrieve&version=1.2&query=SERVERCHOICE%20any%20%22theater%20griechen%22%20and%20isad.reference%20==%20%22VII.%22)
+
 
 Alle records (Verzeichnungseinheiten) welche mit der Signatur "VII." beginnen, Stufe "Dossier" sind und der Zeitraum 1950 ist:
 
-```
-https://amsquery.stadt-zuerich.ch/SRU/?operation=searchretrieve&version=1.2&query=isad.reference%20==%20%22VII.%22%20and%20isad.descriptionlevel%20=%20%22dossier%22%20and%20isad.date%20within%20%221950-01-01%201950-12-31%22
-```
+[https://amsquery.stadt-zuerich.ch/SRU/?operation=searchretrieve&version=1.2&query=isad.reference%20==%20%22VII.%22%20and%20isad.descriptionlevel%20=%20%22dossier%22%20and%20isad.date%20within%20%221950-01-01%201950-12-31%22](https://amsquery.stadt-zuerich.ch/SRU/?operation=searchretrieve&version=1.2&query=isad.reference%20==%20%22VII.%22%20and%20isad.descriptionlevel%20=%20%22dossier%22%20and%20isad.date%20within%20%221950-01-01%201950-12-31%22)
+
 
 ## Ressourcen
 
