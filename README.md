@@ -313,4 +313,4 @@ In dieser Anleitung haben wir die grundlegenden und erweiterten Funktionen der S
 
 ## Feedback
 
-Wir hoffen, dass diese Anleitung Ihnen geholfen hat, die SRU-Schnittstelle besser zu verstehen und zu nutzen. Falls Sie noch Fragen zu dieser Anleitung oder zur Benutzung der Schnittstelle haben wenden Sie sich gerne an das [Open Data Team](https://www.stadt-zuerich.ch/portal/de/index/ogd/kontakt.html). Bei inhaltlichen Fragen steht Ihnen das Team des [Stadtarchivs](https://www.stadt-zuerich.ch/content/prd/de/index/stadtarchiv/ueber_uns/kontakt.html) zur Verfügung.
+Wir hoffen, dass diese Anleitung Ihnen geholfen hat, die SRU-Schnittstelle besser zu verstehen und zu nutzen. Falls Sie noch Fragen zu dieser Anleitung oder zur Benutzung der Schnittstelle haben wenden Sie sich gerne an das [Open Data Team](https://www.stadt-zuerich.ch/ogd). Bei inhaltlichen Fragen steht Ihnen das Team des [Stadtarchivs](https://www.stadt-zuerich.ch/sar) zur Verfügung.
