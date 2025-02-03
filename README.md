@@ -231,8 +231,10 @@ Nun, da Sie einige Beispiel von Abfragen mit Python gesehen haben, ist es an der
    * **Problem**: Die SRU-Schnittstelle reagiert sehr langsam.
    * **Lösung**: Dies kann an einer hohen Serverauslastung liegen. Versuchen Sie es zu einem späteren Zeitpunkt erneut.
 5. **Es werden nicht alle Einträge angezeigt**
-   * **Problem**: Es werden pro Abfrage maximal 1500 Einträge zurückgegeben, auch wenn die es mehr Treffer gäbe.
-   * **Lösung**: Wählen Sie ihre Abfragekriterien, z.B. durch Kombination mehrerer Kriterien so, dass maximal 1500 Ttreffer gefunden werden können.
+   * **Problem 1**: Es werden pro Abfrage maximal 1500 Einträge zurückgegeben, auch wenn die es mehr Treffer gäbe.
+   * **Lösung 1**: Wählen Sie ihre Abfragekriterien, z.B. durch Kombination mehrerer Kriterien so, dass maximal 1500 Ttreffer gefunden werden können.
+   * **Problem 2**: Es werden immer nur 300 records angezeigt.
+   * **Lösung 2**: Die Antwortseite ist paginiert. Es gibt ein Feld im xml, das anzeigt, bei welchem Record die nächste Seite startet: `<nextRecordPosition>301</nextRecordPosition>`. Diese kann dann mit dem entsprechenden Zusatz in der URL aufgerufen werden: `&recordstart=301`. Bei der Pythonabfrage mit [sruthi](#sruthi) wird die Paginierung automatisch berücksichtigt.
 
 # 7. Best Practices
 
@@ -260,42 +262,42 @@ Alle records (Verzeichnungseinheiten) deren Signatur (isad.reference) beginnt mi
 
 Alle records (Verzeichnungseinheiten) deren Signatur beginnt mit: "V.E.c.72.:1.2.1." und Titel ist "Tram"
 
-[https://amsquery.stadt-zuerich.ch/SRU/?operation=searchretrieve&version=1.2&query=isad.reference%20==%22V.E.c.72.:1.2.1.%22%20AND%20ISAD.TITLE==%22Tram%22](https://amsquery.stadt-zuerich.ch/SRU/?operation=searchretrieve&version=1.2&query=isad.reference%20==%22V.E.c.72.:1.2.1.%22%20AND%20ISAD.TITLE==%22Tram%22)
+[https://amsquery.stadt-zuerich.ch/SRU/?operation=searchretrieve&version=1.2&query=isad.reference == "V.E.c.72.:1.2.1." AND ISAD.TITLE=="Tram"](https://amsquery.stadt-zuerich.ch/SRU/?operation=searchretrieve&version=1.2&query=isad.reference%20==%22V.E.c.72.:1.2.1.%22%20AND%20ISAD.TITLE==%22Tram%22)
 
 
 Alle records (Verzeichnungseinheiten) deren Signatur beginnt mit: "V.E.c.72.:1.2.1." und Titel ist "Tram" und Datum ist 1920
 
-[https://amsquery.stadt-zuerich.ch/SRU/?operation=searchretrieve&version=1.2&query=isad.reference%20==%22V.E.c.72.:1.2.1.%22%20AND%20ISAD.TITLE==%22Tram%22%20AND%20ISAD.Date==%221920%22](https://amsquery.stadt-zuerich.ch/SRU/?operation=searchretrieve&version=1.2&query=isad.reference%20==%22V.E.c.72.:1.2.1.%22%20AND%20ISAD.TITLE==%22Tram%22%20AND%20ISAD.Date==%221920%22)
+[https://amsquery.stadt-zuerich.ch/SRU/?operation=searchretrieve&version=1.2&query=isad.reference == "V.E.c.72.:1.2.1." AND ISAD.TITLE=="Tram" AND ISAD.Date=="1920"](https://amsquery.stadt-zuerich.ch/SRU/?operation=searchretrieve&version=1.2&query=isad.reference%20==%22V.E.c.72.:1.2.1.%22%20AND%20ISAD.TITLE==%22Tram%22%20AND%20ISAD.Date==%221920%22)
 
 
 Alle records (Verzeichnungseinheiten) deren Signatur beginnt mit: "V.E.c.72.:1.2.1." und Titel ist "Tram" und Datum ist zwischen 1920 und 1925
 
-[https://amsquery.stadt-zuerich.ch/SRU/?operation=searchretrieve&version=1.2&query=isad.reference%20=="V.E.c.72.:1.2.1."%20AND%20ISAD.TITLE=="Tram"%20AND%20ISAD.Date within "1920 1925"](<https://amsquery.stadt-zuerich.ch/SRU/?operation=searchretrieve&version=1.2&query=isad.reference%20=="V.E.c.72.:1.2.1."%20AND%20ISAD.TITLE=="Tram"%20AND%20ISAD.Date within "1920 1925">)
+[https://amsquery.stadt-zuerich.ch/SRU/?operation=searchretrieve&version=1.2&query=isad.reference == "V.E.c.72.:1.2.1." AND ISAD.TITLE=="Tram" AND ISAD.Date within "1920 1925"](<https://amsquery.stadt-zuerich.ch/SRU/?operation=searchretrieve&version=1.2&query=isad.reference%20=="V.E.c.72.:1.2.1."%20AND%20ISAD.TITLE=="Tram"%20AND%20ISAD.Date within "1920 1925">)
 
 
 Volltextsuche auf der Detailseite:
 
-[https://amsquery.stadt-zuerich.ch/SRU/?operation=searchretrieve&version=1.2&query=Serverchoice%20all%20%22tram%22%20AND%20ISAD.REFERENCE==%22V.E.c.72.:1.2.1%22%20AND%20isad.date%20WITHIN%20%221920%201932%22%20and%20serverchoice%20all%20%22schwarz-weiss%20Karton%22](https://amsquery.stadt-zuerich.ch/SRU/?operation=searchretrieve&version=1.2&query=Serverchoice%20all%20%22tram%22%20AND%20ISAD.REFERENCE==%22V.E.c.72.:1.2.1%22%20AND%20isad.date%20WITHIN%20%221920%201932%22%20and%20serverchoice%20all%20%22schwarz-weiss%20Karton%22)
+[https://amsquery.stadt-zuerich.ch/SRU/?operation=searchretrieve&version=1.2&query=Serverchoice all "tram" AND ISAD.REFERENCE=="V.E.c.72.:1.2.1" AND isad.date WITHIN "1920 1932" and serverchoice all "schwarz-weiss Karton"](https://amsquery.stadt-zuerich.ch/SRU/?operation=searchretrieve&version=1.2&query=Serverchoice%20all%20%22tram%22%20AND%20ISAD.REFERENCE==%22V.E.c.72.:1.2.1%22%20AND%20isad.date%20WITHIN%20%221920%201932%22%20and%20serverchoice%20all%20%22schwarz-weiss%20Karton%22)
 
 
 Alle records (Verzeichnungseinheiten) deren Signatur beginnt mit: "VII.6.":
 
-[https://amsquery.stadt-zuerich.ch/SRU/?operation=searchretrieve&version=1.2&query=isad.reference%20==%20%22VII.6.%22](https://amsquery.stadt-zuerich.ch/SRU/?operation=searchretrieve&version=1.2&query=isad.reference%20==%20%22VII.6.%22)
+[https://amsquery.stadt-zuerich.ch/SRU/?operation=searchretrieve&version=1.2&query=isad.reference == "VII.6."](https://amsquery.stadt-zuerich.ch/SRU/?operation=searchretrieve&version=1.2&query=isad.reference%20==%20%22VII.6.%22)
 
 
 Alle records (Verzeichnungseinheiten) welche mit der Signatur "VII.6." beginnen und Stufe "Dossier" sind:
 
-[https://amsquery.stadt-zuerich.ch/SRU/?operation=searchretrieve&version=1.2&query=isad.reference%20==%20%22VII.6.%22%20and%20isad.descriptionlevel%20=%20%22dossier%22](https://amsquery.stadt-zuerich.ch/SRU/?operation=searchretrieve&version=1.2&query=isad.reference%20==%20%22VII.6.%22%20and%20isad.descriptionlevel%20=%20%22dossier%22)
+[https://amsquery.stadt-zuerich.ch/SRU/?operation=searchretrieve&version=1.2&query=isad.reference == "VII.6." and isad.descriptionlevel = "dossier"](https://amsquery.stadt-zuerich.ch/SRU/?operation=searchretrieve&version=1.2&query=isad.reference%20==%20%22VII.6.%22%20and%20isad.descriptionlevel%20=%20%22dossier%22)
 
 
 Alle records (Verzeichnungseinheiten) welche mit der Signatur "VII." beginnen und im Volltext "theater" oder "griechen" vorkommt:
 
-[https://amsquery.stadt-zuerich.ch/SRU/?operation=searchretrieve&version=1.2&query=SERVERCHOICE%20any%20%22theater%20griechen%22%20and%20isad.reference%20==%20%22VII.%22](https://amsquery.stadt-zuerich.ch/SRU/?operation=searchretrieve&version=1.2&query=SERVERCHOICE%20any%20%22theater%20griechen%22%20and%20isad.reference%20==%20%22VII.%22)
+[https://amsquery.stadt-zuerich.ch/SRU/?operation=searchretrieve&version=1.2&query=SERVERCHOICE any "theater griechen" and isad.reference == "VII."](https://amsquery.stadt-zuerich.ch/SRU/?operation=searchretrieve&version=1.2&query=SERVERCHOICE%20any%20%22theater%20griechen%22%20and%20isad.reference%20==%20%22VII.%22)
 
 
 Alle records (Verzeichnungseinheiten) welche mit der Signatur "VII." beginnen, Stufe "Dossier" sind und der Zeitraum 1950 ist:
 
-[https://amsquery.stadt-zuerich.ch/SRU/?operation=searchretrieve&version=1.2&query=isad.reference%20==%20%22VII.%22%20and%20isad.descriptionlevel%20=%20%22dossier%22%20and%20isad.date%20within%20%221950-01-01%201950-12-31%22](https://amsquery.stadt-zuerich.ch/SRU/?operation=searchretrieve&version=1.2&query=isad.reference%20==%20%22VII.%22%20and%20isad.descriptionlevel%20=%20%22dossier%22%20and%20isad.date%20within%20%221950-01-01%201950-12-31%22)
+[https://amsquery.stadt-zuerich.ch/SRU/?operation=searchretrieve&version=1.2&query=isad.reference == "VII." and isad.descriptionlevel = "dossier" and isad.date within "1950-01-01 1950-12-31"](https://amsquery.stadt-zuerich.ch/SRU/?operation=searchretrieve&version=1.2&query=isad.reference%20==%20%22VII.%22%20and%20isad.descriptionlevel%20=%20%22dossier%22%20and%20isad.date%20within%20%221950-01-01%201950-12-31%22)
 
 
 ## Ressourcen
