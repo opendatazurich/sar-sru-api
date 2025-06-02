@@ -231,7 +231,7 @@ Nun, da Sie einige Beispiel von Abfragen mit Python gesehen haben, ist es an der
    * **Problem**: Die SRU-Schnittstelle reagiert sehr langsam.
    * **Lösung**: Dies kann an einer hohen Serverauslastung liegen. Versuchen Sie es zu einem späteren Zeitpunkt erneut.
 5. **Es werden nicht alle Einträge angezeigt**
-   * **Problem 1**: Es werden pro Abfrage maximal 1500 Einträge zurückgegeben, auch wenn die es mehr Treffer gäbe.
+   * **Problem 1**: Es werden pro Abfrage maximal 1500 Einträge zurückgegeben, auch wenn es mehr Treffer gäbe.
    * **Lösung 1**: Wählen Sie ihre Abfragekriterien, z.B. durch Kombination mehrerer Kriterien so, dass maximal 1500 Ttreffer gefunden werden können.
    * **Problem 2**: Es werden immer nur 300 records angezeigt.
    * **Lösung 2**: Die Antwortseite ist paginiert. Es gibt ein Feld im xml, das anzeigt, bei welchem Record die nächste Seite startet: `<nextRecordPosition>301</nextRecordPosition>`. Diese kann dann mit dem entsprechenden Zusatz in der URL aufgerufen werden: `&recordstart=301`. Bei der Pythonabfrage mit [sruthi](#sruthi) wird die Paginierung automatisch berücksichtigt.
